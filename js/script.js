@@ -156,3 +156,29 @@ topBtn.onclick=function(){
     });
 
 };
+
+/* ============================
+   HAMBURGER MENU
+============================ */
+
+const hamburger = document.getElementById("hamburger");
+
+const navMenu = document.getElementById("navMenu");
+
+hamburger.onclick = () => {
+
+    navMenu.classList.toggle("active");
+
+};
+
+/* Close menu after clicking a link */
+
+document.querySelectorAll("#navMenu a").forEach(link=>{
+
+    link.onclick=()=>{
+
+        navMenu.classList.remove("active");
+
+    };
+
+});
