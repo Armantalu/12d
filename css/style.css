@@ -2565,8 +2565,6 @@ blockquote{
 
     width:100%;
 
-    margin-top:30px;
-
     background:#151515;
 
     border:1px solid rgba(255,255,255,.08);
@@ -2575,19 +2573,25 @@ blockquote{
 
     overflow:hidden;
 
+    height:auto;          /* Important */
+
+    padding:0;
+
 }
 
 .gallery-video video{
 
-    width:100%;
-
-    height:550px;
-
     display:block;
 
-    background:#000;
+    width:100%;
+
+    height:auto;          /* Important */
+
+    max-height:650px;
 
     object-fit:cover;
+
+    background:#000;
 
 }
 
