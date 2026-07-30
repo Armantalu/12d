@@ -81,29 +81,49 @@ const messageInterval = setInterval(() => {
 
 }, 450);
 
+/* ==========================
+   LOADER (Mobile Fixed)
+========================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+
+        clearInterval(messageInterval);
+
+        if(loader){
+            loader.classList.add("hide");
+        }
+
+    },1800);
+
+});
+
+/* Failsafe */
+
 window.addEventListener("load", () => {
 
     const loader = document.getElementById("loader");
 
-    setTimeout(() => {
-
-        clearInterval(messageInterval);
+    if(loader){
         loader.classList.add("hide");
+    }
 
-    }, 2500);
+});
 
-});window.addEventListener("load", () => {
+/* Ultimate failsafe */
+
+setTimeout(() => {
 
     const loader = document.getElementById("loader");
 
-    setTimeout(() => {
-
-        clearInterval(messageInterval);
+    if(loader){
         loader.classList.add("hide");
+    }
 
-    }, 2500);
-
-});
+},5000);
 
 function openGallery(img){
 

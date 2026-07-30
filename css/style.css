@@ -431,6 +431,7 @@ max-width:900px;
 
     opacity:0;
     visibility:hidden;
+    pointer-events:none;
 
 }
 
