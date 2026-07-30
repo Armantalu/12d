@@ -82,48 +82,37 @@ const messageInterval = setInterval(() => {
 }, 450);
 
 /* ==========================
-   LOADER (Mobile Fixed)
+   LOADER
 ========================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+function hideLoader() {
 
     const loader = document.getElementById("loader");
 
-    setTimeout(() => {
+    if (loader && !loader.classList.contains("hide")) {
 
         clearInterval(messageInterval);
+        loader.classList.add("hide");
 
-        if(loader){
-            loader.classList.add("hide");
-        }
+    }
 
-    },1800);
+}
 
-});
-
-/* Failsafe */
+/* Normal loading */
 
 window.addEventListener("load", () => {
 
-    const loader = document.getElementById("loader");
-
-    if(loader){
-        loader.classList.add("hide");
-    }
+    setTimeout(hideLoader, 2500);
 
 });
 
-/* Ultimate failsafe */
+/* Failsafe for phones */
 
 setTimeout(() => {
 
-    const loader = document.getElementById("loader");
+    hideLoader();
 
-    if(loader){
-        loader.classList.add("hide");
-    }
-
-},5000);
+}, 7000);
 
 function openGallery(img){
 
